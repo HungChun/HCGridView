@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HCGridViewItem.h"
+#import "HCGridViewItem.h"   
 @protocol HCGridViewDelegate;
 
 @interface HCGridView : UIScrollView <HCGridViewItemDelegate,UIScrollViewDelegate>
@@ -26,8 +26,13 @@
 
 @protocol HCGridViewDelegate <NSObject>
 
+/* Add button click. */
 - (void)addNewHCGridViewItem:(HCGridView *)hcGridView;
-- (void)hcGridViewItemClick:(HCGridViewItem *)item;
-- (void)hcGridViewItemDelete:(HCGridViewItem *)item;
+
+/* Item click. */
+- (void)hcGridViewItemClicked:(HCGridViewItem *)item;
+
+/* Item delete. */
+- (void)hcGridViewItemDeleted:(HCGridViewItem *)item;
 
 @end

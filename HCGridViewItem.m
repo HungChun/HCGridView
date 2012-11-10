@@ -11,7 +11,7 @@
 
 @implementation HCGridViewItem
 
-- (id)initWithFrame:(CGRect)frame title:(NSString *)title image:(UIImage *)image tag:(NSInteger)tag
+- (id)initWithFrame:(CGRect)frame title:(NSString *)title image:(UIImage *)image
 {
   self = [super initWithFrame:frame];
   if (self)
@@ -34,23 +34,17 @@
     [self addSubview:_deleteButton];
     
     UITapGestureRecognizer *normalTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
-    
-    UILongPressGestureRecognizer *longPressGR =
+    UILongPressGestureRecognizer *longPress =
     [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
-    longPressGR.allowableMovement=YES;
-    longPressGR.minimumPressDuration = 1;
+    longPress.allowableMovement=YES;
+    longPress.minimumPressDuration = 1;
     
-    [normalTap requireGestureRecognizerToFail:longPressGR];
+    [normalTap requireGestureRecognizerToFail:longPress];
     
-    _imageView.gestureRecognizers = [NSArray arrayWithObjects:normalTap,longPressGR, nil];
+    _imageView.gestureRecognizers = [NSArray arrayWithObjects:normalTap,longPress, nil];
     _imageView.userInteractionEnabled = YES;
   }
   return self;
-}
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-  NSLog(@"%@",touch);
-  return YES;
 }
 
 #pragma mark Public method
@@ -83,10 +77,8 @@
 - (void)handleLongPress:(UILongPressGestureRecognizer *)longPress{
   if (longPress.state == UIGestureRecognizerStateBegan)
   {
-    
     [_selectDelegate itemLongTap:self];
   }
-
 }
 
 - (void)tap:(UITapGestureRecognizer *)tap

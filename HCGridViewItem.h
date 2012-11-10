@@ -21,7 +21,7 @@
   UIImageView *_imageView;
 }
 
-- (id)initWithFrame:(CGRect)frame title:(NSString *)title image:(UIImage *)image tag:(NSInteger)tag;
+- (id)initWithFrame:(CGRect)frame title:(NSString *)title image:(UIImage *)image;
 
 - (void)showDeleteAnimation;
 
@@ -29,7 +29,13 @@
 
 @property (nonatomic,assign) id<HCGridViewItemDelegate>selectDelegate;
 
+/* 儲存物件資料 */
+/* Save item data. */
 @property (nonatomic,strong) NSDictionary *data;
+
+/* 儲存物件id */
+/* Save item id. */
+@property (nonatomic) NSInteger itemID;
 
 @end
 

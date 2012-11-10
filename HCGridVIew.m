@@ -91,14 +91,16 @@
         [_addButton setFrame:CGRectMake((count % ( kColumnCount )) * kHCGridViewItemWidth, (count / ( kColumnCount )) * kHCGridViewItemHeitht, kHCGridViewItemWidth, kHCGridViewItemHeitht)];
       }];
     }
-    if (!_isDelete)
-    {
+    
       if (count >= 9)
       {
         [self setContentSize:CGSizeMake(_addButton.frame.origin.x, _addButton.frame.origin.y + kHCGridViewItemHeitht)];
-        [self setContentOffset:CGPointMake(0, _addButton.frame.origin.y + kHCGridViewItemHeitht - self.frame.size.height)];
+        if (!_isDelete)
+        {
+          [self setContentOffset:CGPointMake(0, _addButton.frame.origin.y + kHCGridViewItemHeitht - self.frame.size.height)];
+        }
+        
       }
-    }
   }];
 }
 
@@ -133,7 +135,7 @@
 - (void)itemClicked:(HCGridViewItem *)hcGridViewItem
 {
   if (!_isDelete)
-    [_selectDelegate hcGridViewItemClick:hcGridViewItem];
+    [_selectDelegate hcGridViewItemClicked:hcGridViewItem];
 }
 
 - (void)itemLongTap:(HCGridViewItem *)hcGridViewItem
@@ -146,7 +148,7 @@
 {
   [_items removeObject:hcGridViewItem];
   [hcGridViewItem removeFromSuperview];
-  [_selectDelegate hcGridViewItemDelete:hcGridViewItem];
+  [_selectDelegate hcGridViewItemDeleted:hcGridViewItem];
   [self reLayoutView];
 }
 
