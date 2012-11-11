@@ -22,7 +22,7 @@
   if (self) {
     _isDelete = NO;
     self.delegate = self;
-    [self setContentSize:CGSizeMake(frame.size.width, frame.size.width)];
+    [self setContentSize:CGSizeMake(320, kHCGridViewItemHeitht)];
     _items = [[NSMutableArray alloc]init];
     _addButton = [[UIButton alloc]initWithFrame:kAddButtonDefaultRect];
     [_addButton setImage:[UIImage imageNamed:@"add.png"] forState:UIControlStateNormal];
@@ -92,15 +92,14 @@
       }];
     }
     
-      if (count >= 9)
+    [self setContentSize:CGSizeMake(320, _addButton.frame.origin.y + kHCGridViewItemHeitht)];
+    if (!_isDelete)
+    {
+      if (self.contentSize.height > self.frame.size.height)
       {
-        [self setContentSize:CGSizeMake(_addButton.frame.origin.x, _addButton.frame.origin.y + kHCGridViewItemHeitht)];
-        if (!_isDelete)
-        {
-          [self setContentOffset:CGPointMake(0, _addButton.frame.origin.y + kHCGridViewItemHeitht - self.frame.size.height)];
-        }
-        
+        [self setContentOffset:CGPointMake(0, _addButton.frame.origin.y + kHCGridViewItemHeitht - self.frame.size.height)];
       }
+    }
   }];
 }
 
