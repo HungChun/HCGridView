@@ -16,9 +16,9 @@
 
 - (void)viewDidLoad
 {
-  _gridView = [[HCGridView alloc]initWithFrame:CGRectMake(0, 0, 320, 460)];
+  _gridView = [[HCGridView alloc]initWithFrame:CGRectMake(0, 0, 320, 400)];
+  [_gridView setBackgroundColor:[UIColor yellowColor]];
   _gridView.selectDelegate = self;
-  [_gridView setContentSize:CGSizeMake(320, 460)];
   [self.view addSubview:_gridView];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
