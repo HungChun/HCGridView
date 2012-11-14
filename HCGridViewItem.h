@@ -21,7 +21,9 @@
   UIImageView *_imageView;
 }
 
-- (id)initWithFrame:(CGRect)frame title:(NSString *)title image:(UIImage *)image;
+- (void)setTitle:(NSString *)title image:(UIImage *)image;
+
+- (void)setTitle:(NSString *)title imageWithURL:(NSURL *)url;
 
 - (void)showDeleteAnimation;
 

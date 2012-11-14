@@ -23,6 +23,10 @@
 		F18D4AB4164E8F4F005095BB /* Done.png in Resources */ = {isa = PBXBuildFile; fileRef = F18D4AAD164E8F4F005095BB /* Done.png */; };
 		F18D4AB5164E8F4F005095BB /* HCGridVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = F18D4AAF164E8F4F005095BB /* HCGridVIew.m */; };
 		F18D4AB6164E8F4F005095BB /* HCGridViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F18D4AB1164E8F4F005095BB /* HCGridViewItem.m */; };
+		F194166316533D72003C83A9 /* ImageCacheLiteManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = F194165C16533D72003C83A9 /* ImageCacheLiteManagement.m */; };
+		F194166416533D72003C83A9 /* NSString+MD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = F194165E16533D72003C83A9 /* NSString+MD5Addition.m */; };
+		F194166516533D72003C83A9 /* UIImage+ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F194166016533D72003C83A9 /* UIImage+ImageCache.m */; };
+		F194166616533D72003C83A9 /* UIImageView+ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F194166216533D72003C83A9 /* UIImageView+ImageCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +53,14 @@
 		F18D4AAF164E8F4F005095BB /* HCGridVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HCGridVIew.m; path = ../HCGridVIew.m; sourceTree = "<group>"; };
 		F18D4AB0164E8F4F005095BB /* HCGridViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HCGridViewItem.h; path = ../HCGridViewItem.h; sourceTree = "<group>"; };
 		F18D4AB1164E8F4F005095BB /* HCGridViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HCGridViewItem.m; path = ../HCGridViewItem.m; sourceTree = "<group>"; };
+		F194165B16533D72003C83A9 /* ImageCacheLiteManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCacheLiteManagement.h; sourceTree = "<group>"; };
+		F194165C16533D72003C83A9 /* ImageCacheLiteManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCacheLiteManagement.m; sourceTree = "<group>"; };
+		F194165D16533D72003C83A9 /* NSString+MD5Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5Addition.h"; sourceTree = "<group>"; };
+		F194165E16533D72003C83A9 /* NSString+MD5Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5Addition.m"; sourceTree = "<group>"; };
+		F194165F16533D72003C83A9 /* UIImage+ImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageCache.h"; sourceTree = "<group>"; };
+		F194166016533D72003C83A9 /* UIImage+ImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageCache.m"; sourceTree = "<group>"; };
+		F194166116533D72003C83A9 /* UIImageView+ImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ImageCache.h"; sourceTree = "<group>"; };
+		F194166216533D72003C83A9 /* UIImageView+ImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ImageCache.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +80,7 @@
 		F18D4A75164E8F20005095BB = {
 			isa = PBXGroup;
 			children = (
+				F194165A16533D72003C83A9 /* ImageCacheLite */,
 				F18D4AAB164E8F4F005095BB /* add.png */,
 				F18D4AAC164E8F4F005095BB /* deleteButton2.png */,
 				F18D4AAD164E8F4F005095BB /* Done.png */,
@@ -124,6 +137,22 @@
 				F18D4A9A164E8F20005095BB /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F194165A16533D72003C83A9 /* ImageCacheLite */ = {
+			isa = PBXGroup;
+			children = (
+				F194165B16533D72003C83A9 /* ImageCacheLiteManagement.h */,
+				F194165C16533D72003C83A9 /* ImageCacheLiteManagement.m */,
+				F194165D16533D72003C83A9 /* NSString+MD5Addition.h */,
+				F194165E16533D72003C83A9 /* NSString+MD5Addition.m */,
+				F194165F16533D72003C83A9 /* UIImage+ImageCache.h */,
+				F194166016533D72003C83A9 /* UIImage+ImageCache.m */,
+				F194166116533D72003C83A9 /* UIImageView+ImageCache.h */,
+				F194166216533D72003C83A9 /* UIImageView+ImageCache.m */,
+			);
+			name = ImageCacheLite;
+			path = ../../ImageCacheLite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +229,10 @@
 				F18D4AA1164E8F20005095BB /* ViewController.m in Sources */,
 				F18D4AB5164E8F4F005095BB /* HCGridVIew.m in Sources */,
 				F18D4AB6164E8F4F005095BB /* HCGridViewItem.m in Sources */,
+				F194166316533D72003C83A9 /* ImageCacheLiteManagement.m in Sources */,
+				F194166416533D72003C83A9 /* NSString+MD5Addition.m in Sources */,
+				F194166516533D72003C83A9 /* UIImage+ImageCache.m in Sources */,
+				F194166616533D72003C83A9 /* UIImageView+ImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

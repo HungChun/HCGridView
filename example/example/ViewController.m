@@ -33,7 +33,8 @@
 #pragma mark HCGridViewDelegate
 - (void)addNewHCGridViewItem:(HCGridView *)hcGridView
 {
-  HCGridViewItem *item = [[HCGridViewItem alloc]initWithFrame:[hcGridView nextPosition] title:@"Test item" image:[UIImage imageNamed:@"add.png"]];
+  HCGridViewItem *item = [[HCGridViewItem alloc]initWithFrame:[hcGridView nextPosition]];
+  [item setTitle:@"title" imageWithURL:nil];
   [_gridView addNewItem:item];
 }
 

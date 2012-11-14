@@ -8,10 +8,10 @@
 
 #import "HCGridViewItem.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "UIImageView+ImageCache.h"
 @implementation HCGridViewItem
 
-- (id)initWithFrame:(CGRect)frame title:(NSString *)title image:(UIImage *)image
+- (id)initWithFrame:(CGRect)frame
 {
   self = [super initWithFrame:frame];
   if (self)
@@ -19,14 +19,13 @@
     self.alpha = 0.001;
     _title = [[UILabel alloc]initWithFrame:CGRectMake(0, kHCGridViewItemImageSize, kHCGridViewItemTitleWidth, kHCGridViewItemTitleHeight)];
     _title.textAlignment = UITextAlignmentCenter;
-    _title.text = title;
+    _title.backgroundColor = [UIColor clearColor];
     [self addSubview:_title];
     
     _imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kHCGridViewItemImageSize, kHCGridViewItemImageSize)];
-    _imageView.image = image;
     [self addSubview:_imageView];
     
-    _deleteButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+    _deleteButton = [[UIButton alloc]initWithFrame:CGRectMake(2, 2, 20, 20)];
     [_deleteButton setImage:[UIImage imageNamed:@"deleteButton2.png"] forState:UIControlStateNormal];
     [_deleteButton addTarget:self action:@selector(delete:) forControlEvents:UIControlEventTouchUpInside];
     [_deleteButton setUserInteractionEnabled:YES];
@@ -52,6 +51,12 @@
 {
   _title.text = title;
   [_imageView setImage:image];
+}
+
+- (void)setTitle:(NSString *)title imageWithURL:(NSURL *)url
+{
+  _title.text = title;
+  [_imageView loadImageWithURL:url];
 }
 
 - (void)showDeleteAnimation
